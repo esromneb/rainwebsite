@@ -61,7 +61,7 @@ if (Meteor.isServer) {
                 if( Rain.find().count() )
                 {
                     obj[foxid] = {
-                        downlinkData: "0000000000000001"
+                        downlinkData: "FFFFFFFFFFFFFFFF"
                     };
                 } else {
                     obj[foxid] = {
