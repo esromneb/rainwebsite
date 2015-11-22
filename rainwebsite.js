@@ -14,10 +14,32 @@ if (Meteor.isClient) {
       Session.set('counter', Session.get('counter') + 1);
     }
   });
+
+  Router.route('/', function () {
+    this.render('hello', {
+      data: function () { }
+    });
+  });
+
 }
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
   });
+
+
+  Router.map(function () {
+    this.route('api', {
+      path: '/api',
+      where: 'server',
+      action: function () {
+        var json = {a: 4};
+        this.response.setHeader('Content-Type', 'application/json');
+        this.response.end(JSON.stringify(json));
+      }
+    });
+  });
+
+
 }
