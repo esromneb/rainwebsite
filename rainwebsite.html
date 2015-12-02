@@ -11,5 +11,9 @@
     <button id="yes">Yes Rain</button><br>
     <br>
     <button id="no">No Rain</button>
-    <p>{{rainstatus}}</p>
+{{#if rainstatus}}
+<p>It's currently raining<br><h1 class='red'>All sprinklers off</h1></p>
+{{else}}
+<p>It's currently dry<br><h1 class='green'>All sprinklers operating</h1></p>
+{{/if}}
 </template>

@@ -13,11 +13,13 @@ if (Meteor.isClient) {
             var txt;
             if( Rain.find().count() )
             {
-                txt = "It's currently raining";
+		return true;
+                txt = "It's currently raining<br><h1 class='red'>All sprinklers off</h1>";
             }
             else
             {
-                txt = "It's currently dry";
+		return false;
+                txt = "It's currently dry<br><h1 class='green'>All sprinklers operating</h1>";
             }
             return txt;
         }
